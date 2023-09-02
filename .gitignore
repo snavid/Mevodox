@@ -1,2 +1,3 @@
 .vscode/*
 websites/statics/bootstrap-5/*
+websites/__pycache__/*
