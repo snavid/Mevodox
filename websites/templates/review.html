@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    {% extends "base.html" %}
+    {% block title %}
+    {% endblock title %}
+        {% block head %}
+        <link rel="stylesheet" type="text/css" href="statics/review.css">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+        {%if user.gender == 1%}
+        <a class="navbar-brand" href="#"><img class="rounded" src="statics/male.png" width="70px" height="50px"  alt="Tanzania"></a>
+        {%else%}
+        <a class="navbar-brand" href="#"><img class="rounded"  src="statics/female.png" width="70px" height="50px"  alt="Tanzania"></a>
+        {%endif%}
+        <span class="navbar-text text-danger me-5" ><b>{{user.username|capitalize}}</b> 
+        </span>
+       
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link " href="/home">Home</a></li>
+        <li class="nav-item"><a class="nav-link " href="/add_notes">Add_Memo</a></li>
+        <li class="nav-item"><a class="nav-link disabled" href="/review_notes">Review_Memo</a></li>
+        <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+        </ul>
+        </div>
+        </div>
+        </nav>
+     {% endblock head %}
+</head>
+<body>
+      {% block content %}
+  {% if notice %}
+      <div class="row">
+      <div class="col mt-2  ms-2">
+      <a id="btn" class=" container btn btn-danger btn-sm " href="/add_notes">+ Memo</a>
+      </div>
+      <div class="col container m-2 ">
+        <input id="search" class="form-control shadow-lg me-2 btn" type="text" placeholder="Search your memo here . . . . . . . . . . . ." onkeyup="MyFilter()" required>
+      </div>
+      <div>
+        {% for note in user.notes|reverse %}
+            <fieldset> 
+            <div id="grab"  class="container bg-light shadow-lg mt-4 diary-entry">
+            <div class="clearfix pt-2 pe-2 ps-2">
+            <span class="badge bg-success text-body">{{ note.date }}</span>
+            <span class="btn-close float-end" onclick="deletenote('{{note.id}}')"></span>
+            </div>
+            <div class="p-3">
+            <h5 class="diary-title">{{ note.title }}</h5>
+            <img class="diary-image img-thumbnail" src="{{ url_for('static', filename='images/' + note.filename) }}" alt="Image", widith="500px", height="500px">
+            <p class="diary-text">{{ note.data }}</p>
+            <div >
+            <div class="row">
+            <div class="col">
+            <a class="btn btn-warning" href="/edit/{{note.id}}" data-bs-toggle="tooltip" title="Edit {{ note.title }} Memo">EDIT</a>
+            </div>
+            <div class="col">
+            <div class="float-end">
+            <a  href="/download_pdf/{{note.id}}" data-bs-toggle="tooltip" title="Download {{ note.title }} Memo  as pdf"><img src="statics/pdf.png"  class="img-thumbnail mx-auto d-block img-fluid " alt="download" width="50px" height="50px" ></a>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </fieldset>
+          {%endfor%}
+  {%else%}
+          <div class="mt-4 me-5 ms-5 p-5 bg-warning text-white rounded">
+          <h1>OOOps !!!!!!</h1>
+          <p class="ms-5">No memo available please click a button below to add a memo for review</p>
+          <div class="d-grid">
+          <a  class="btn btn-danger btn-block" href="/add_notes">+ Memo</a>
+          </div>
+          </div>
+  {%endif%}
+          <script src="statics/review.js"></script>
+{% endblock content %}
+    </body>
+</html>

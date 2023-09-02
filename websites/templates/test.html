@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% extends "base.html" %}
+    {% block title %}
+
+    {% endblock title %}
+    {% block head %}
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='test.css')}}">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="row">
+                {% if user.gender == 1 %}
+                <a class="navbar-brand" href="#"><img src="statics/male.png" width="70px" height="50px" alt="Tanzania"></a>
+                {% else %}
+                <a class="navbar-brand" href="#"><img src="statics/female.png" width="70px" height="50px" alt="Tanzania"></a>
+                {% endif %}
+            </div>
+            <span class="navbar-text text-danger me-5"><b>{{user.username|capitalize}}</b></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link " href="/home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link disabled" href="/add_notes">Add_Memo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/review_notes">Review_Memo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% endblock head %}
+
+</head>
+<body>
+    {% block content %}
+    <div class="container bata mt-4 shadow-lg">
+            <a href="/review_notes" class="mt-1 btn btn-danger btn-block"> Review Memo</a>
+
+        <h2 align="center">Memo</h2>
+        <form method='POST' class="was-validated  " enctype="multipart/form-data">
+
+            <div class="container">
+                <div id="preview"> </div>
+                <input type="file" name="image1" class="form-control" accept="image/*" onchange="getImagePreview(event)">
+                <div class="valid-feedback">Now you can add your file picture here</div>
+                <div class="invalid-feedback">none</div>
+                <button type="button" id="btn6" align="center" class="btn btn-outline-primary" data-bs-toggle="modal"
+                    data-bs-target="#myModal" style="display:none;"> + picture file
+                </button>
+
+                <!-- The Modal -->
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Notice</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                On this free version you can only add six images upgrade to add more images or
+                                contact the developer Yunus Siraju for assistance mobile : 0786392008
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mt-3" >
+                <input type="text" name="title" class="form-control "
+                    placeholder="Write your memo Title here......" required>
+                    <span class="input-group-text"><b>Title</b></span>
+                     <div class="invalid-feedback">Please fill in your memo title here</div>
+                    </div>
+                
+                
+                <div>
+                    <textarea name="memo" rows="10" cols="50" class="form-control mt-3"
+                        placeholder="Write your memo body here......." required></textarea>
+                    <div class="invalid-feedback">Please fill in your memo body here</div>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" align="center" class="btn btn-danger mb-5 mt-3 btn-block">Add
+                        Memo</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="{{url_for('static', filename='test.js')}}"></script>
+    {% endblock content %}
+</body>
+</html>

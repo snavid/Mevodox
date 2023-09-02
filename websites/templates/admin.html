@@ -1,0 +1,53 @@
+    {% extends "base.html" %}
+    {% block title %}
+        <title>admin</title>
+    {% endblock title %}
+    {% block head %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="statics/admin.css" rel="stylesheet">
+        <script src="statics/admin.js"></script>
+        <div class="container shadow-lg bg-light p-5 mt-4">
+        <h5 align='center' class="text-success pt-1" > <abbr title="You have {{len}} users in your mevodox web app ">Welcome to admin dashboard Mr Yunus</abbr></h5>
+         <a href="/delete_pdf"  class="btn btn-danger btn-block mb-2">Delete All Pdf files</a>
+        </div>
+    {% endblock head %}
+    
+    {% block content %}
+    {%if notice%}
+    {%for user in users%}
+    <div class="container">
+    <div class="row mt-3 shadow-lg bg-light" id="fish">
+      <div class="col-sm-4 mt-1 ">
+      <div class="p-1">
+       <p class="text-danger">USERNAME : <kbd>{{user.username|capitalize}}</kbd> </p>
+      </div>
+      </div>
+
+      <div class="col-sm-4 mt-1">
+      <div class="p-1">
+        {%if user.gender == 1%}
+            <p class="text-danger">GENDER : <kbd>male</kbd></p>  
+        {%else%}
+              <p class="text-danger">GENDER : <kbd>female</kbd></p>  
+        {%endif%}
+      </div>
+      </div>
+
+      <div class="col-sm-4 mt-1">
+      <div class="p-1">
+       <p class="text-danger">EMAIL : <kbd>{{user.email}}</kbd></p>
+      </div>
+      </div>
+        <div class="d-grid">
+        <a href="/bridge/{{user.username}}"  class="btn btn-outline-success btn-block mb-2">LOGIN</a>  
+        </div>
+    </div>
+    </div>
+    {%endfor%}
+    {%endif%}
+
+       
+
+    {% endblock content %}
+   

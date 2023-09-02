@@ -1,0 +1,59 @@
+<html>
+<head>
+{% extends "base.html" %}
+    {% block title %}
+            <title>SIGNIN</title> 
+    {% endblock title %}
+    {% block head %}
+        <div class="m-1 progress fixed-top">
+        <div id="prog" class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width:0%"></div>
+        </div>
+    {% endblock head %}
+</head>
+<style>
+<body>
+    {% block content %}
+        <img src="statics/mevodox.png" class="img-fluid mx-auto d-block mt-4" width="50%", height="20%">
+        <div>
+        <div class="container mx-auto d-block">
+        <a href="/" class="mt-3 text-body btn btn-outline-danger"><kbd> <b> Back</b></kbd></a>
+        <form method="post" class="was-validated">
+            <div class="mt-1">
+            <label class="form-label"><b> Username </b></label>
+            <input type="text" id="uname" name="uname" class="form-control" placeholder="Enter Username" onclick="document.getElementById('prog').style.width = '25%'" required="">
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="mt-1">
+            <label class="form-label"><b> Email </b></label>
+            <input type="text" id="email" name="email" class="form-control" placeholder="Enter email" onclick="document.getElementById('prog').style.width = '50%'" required="">
+            <div class="valid-feedback">valid</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="mt-1">
+            <label class="form-label"><b>Password</b></label>
+            <input type="password"  name="passwd1" class="form-control" placeholder="Enter Password" onclick="document.getElementById('prog').style.width = '75%'" required="">
+            <div class="valid-feedback">valid</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <label class="form-label"><b>Confirm Password</b></label>
+            <input type="password"  name="passwd2" class="form-control" placeholder="Enter Password" onclick="document.getElementById('prog').style.width = '90%'" required="">
+            <div class="valid-feedback">valid</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="container">
+            <label class="form-label"><b>Gender</b></label>
+            <select name="gender" class="form-select" onclick="document.getElementById('prog').style.width = '100%'" required>
+            <option value=1>Male</option>
+            <option value=2>Female</option>
+            </select>
+            
+            </div>
+            <div class="m-3 d-grid">
+            <button type="submit" class="btn btn-danger btn-block"> SIGNIN</button>                
+            </div>
+            </form>
+            </div>
+        {% endblock content %}
+</body>
+</html>

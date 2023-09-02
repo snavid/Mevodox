@@ -1,0 +1,63 @@
+
+.diary-entry {
+  color: #6c286d;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.diary-entry .badge {
+  background-color: #ffc0cb;
+  color: #6c286d;
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.diary-entry .btn-close {
+  color: #6c286d;
+  cursor: pointer;
+}
+
+.diary-title {
+  color: #ff69b4;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 0;
+}
+
+.diary-image {
+  width: 25%;
+  display: block;
+  margin: 0 auto;
+}
+
+.diary-text {
+  margin-left: 1em;
+  margin-top: 1.5em;
+}
+#btn {
+  z-index: 20;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+#grab{
+ zoom: 95%;
+}
+#grab:hover {
+ zoom: 100%;
+ transition-property: zoom;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5) ;
+
+}
+#search {
+  z-index: 20;
+  border-color: green;
+  border-width: 0px;
+}
+#search:hover {
+  cursor:auto;
+
+}
+#search:valid {
+  border-width: 0.7px;
+  border-color: red;
+}

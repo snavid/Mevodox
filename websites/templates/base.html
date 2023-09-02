@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="statics/bootstrap-5/css/bootstrap.min.css">
+    <script src="statics/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+    
+    {% block title %}
+    <title>base</title>
+    {% endblock title %}
+    {% block head %}
+    
+    {% endblock head %}
+    </head>
+    <body>
+     {% with messages = get_flashed_messages(with_categories=True)%}
+        {%for category, message in messages%}
+        <div class=" m-1 alert alert-{{category}} alert-dismissible fade show" style="z-index:1031">
+        {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        {%endfor%}
+     
+     
+     {%endwith%}
+        {% block content %}
+        
+        {% endblock content %}
+    </body>
+
+
+
+</html>

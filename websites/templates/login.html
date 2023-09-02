@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         {% block title %}  <title>LOGIN</title> {% endblock title %}      
+        {% extends "base.html" %}
+    </head>
+    <body >
+        {% block content %}
+        <div style="max-width:1663px;">
+        <div class="mt-1">
+        <a href="/welcome"><img src="statics/mevodox.png" width="90%" height="60%" class="img-fluid mx-auto d-block" alt="company logo"></a> 
+        </div>
+        <div class="container">
+        <form method="post" class="was-validated">
+            <div class="mt-5 mb-3">
+            <label class="form-label"><b> Username \ Email </b></label>
+            <input type="text" name="uname" class="form-control" placeholder="Enter Username or Email" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="mt-3">
+            <label class="form-label"><b>Password</b></label>
+            <input type="password" name="passwd" class="form-control" placeholder="Enter Password" required>
+            <div class="valid-feedback">valid</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="mt-3 d-grid">
+             <button type="submit" class="btn btn-block btn-danger" > LOGIN</button>                
+            </div>
+        </form>
+        <div class="container mt-1 text-success" style="text-align:center;"><i>If you don't have an account sign in below</i></div>
+        <div class="d-grid">
+        <a class="mt-3 btn btn-outline-danger" href="/SIGN_IN"> SIGNIN</a>
+        </div>
+        </div>
+        {% endblock content %}
+    </body>
+    
+
+</html>

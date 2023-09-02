@@ -1,0 +1,6 @@
+#fish {
+    border-radius: 14px;
+}
+#fish:hover {
+    background-color: rgba(231, 5, 5, 0.356);
+}

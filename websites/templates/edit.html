@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% extends "base.html"%}
+  {% block title %}
+    <title>Edit Text Template</title>
+  {% endblock title %}
+  {% block head %}
+  <link rel="stylesheet" type="text/css" href="/statics/bootstrap-5/css/bootstrap.min.css">
+  <script src="/statics/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+    
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+    {%if user.gender == 1%}
+    <a class="navbar-brand" href="#"><img  src="/statics/male.png" width="70px" height="50px"  alt="Tanzania"></a>
+    {%else%}
+    <a class="navbar-brand" href="#"><img  src="/statics/female.png" width="70px" height="50px"  alt="Tanzania"></a>
+    {%endif%}
+    <span class="navbar-text text-danger me-5"><b>{{user.username|capitalize}}</b></span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link disabled" href="/home">Home</a></li>
+        <li class="nav-item"><a class="nav-link " href="/add_notes">Add_Memo</a></li>
+        <li class="nav-item"><a class="nav-link" href="/review_notes">Review_Memo</a></li>
+        <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<link rel="stylesheet" type="text/css" href="/statics/edit.css">
+  {%endblock head%}
+
+</head>
+<body>
+  {% block content %}
+  <p id="pass">{{note_id}}</p>
+    <div class="container bg-light rounded shadow-lg" style="margin-top:100px;">
+      <h6 class="text-danger"><b>Hey!  {{user.username}}To apply changes click the submit button below</b></h6>
+      <a href="/review_notes" class="mt-1 mb-1 text-body btn btn-outline-danger"><kbd> <b> Back</b></kbd></a>
+      <div id="editable-content1" class="editable-field form-control bg-light shadow-lg" style="text-align:center; text-transform:uppercase;" contenteditable="true">
+        {{note_title}} 
+      </div>
+      <div id="editable-content2" class="editable-field form-contol bg-light shadow-lg" contenteditable="true">{{note_data}}</div>
+      <br>
+      <div class="d-grid">
+      <button id="submit-btn" class="btn btn-outline-success  d-block" onclick='myfunc({{note_id}})'>Submit</button>
+      </div>
+    </div>
+
+    <script src="/statics/edit.js"></script>
+  {% endblock content %}
+</body>
+</html>
+  
+</body>
+</html>

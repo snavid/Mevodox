@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+    {% extends "base.html" %}
+    {% block title %}
+    <title>home</title>
+    {% endblock title %}
+    {% block head %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="statics/index.css" media="screen">
+     <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+    {%if user.gender == 1%}
+    <a class="navbar-brand" href="#"><img  src="statics/male.png" width="70px" height="50px"  alt="Tanzania"></a>
+    {%else%}
+    <a class="navbar-brand" href="#"><img  src="statics/female.png" width="70px" height="50px"  alt="Tanzania"></a>
+    {%endif%}
+    <span class="navbar-text text-danger me-5"><b>{{user.username|capitalize}}</b></span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link disabled" href="/home">Home</a></li>
+        <li class="nav-item"><a class="nav-link " href="/add_notes">Add_Memo</a></li>
+        <li class="nav-item"><a class="nav-link" href="/review_notes">Review_Memo</a></li>
+        <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<style>
+
+</style>
+{%endblock head %}
+</head>
+<body>
+    {% block content %}
+    <div id="firstpage" class="container-fluid">
+        <img class="img-fluid mx-auto d-block" src="statics/mevodox.png" alt="mevodox logo" height="50%" width="50%">
+        <h1 class="text-white" style="text-align:center; text-transform:capitalize;"> <b>Everyone has secrets</b></h1>
+        <h4 class="text-white" style="text-align:center;">keep your secrets smart</h4>
+
+        <div class="row">
+            <div class="col-sm-6 mt-5"><a href="/add_notes" class="btn btn-danger mx-auto d-block btn p-1"><b>ADD MEMO</b></a></div>
+            <div class="col-sm-6 mt-5"><a href="/review_notes" class="btn btn-danger mx-auto d-block btn p-1"><b>REVIEW MEMO</b></a></div>
+        </div>
+        <h3 class="text-white mt-4" style="text-align:center;"><b>DONT SPEAK JUST TYPE</b></h3>
+        <h4 class="text-danger" style="text-align:center;">Review Any time Any place</h3>
+        <h6 id="mom" class="text-danger" style="text-align:center;">Securely Upload and Store Over 300 Million Memos Online!<h6>
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-danger mx-auto d-block btn-sm mt-5 mb-3" data-bs-toggle="modal" data-bs-target="#myModal">
+               <b>Description of the web application</b> </button>
+               
+        <!-- The Modal -->
+        <div class="modal fade modal-lg mt-5" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header text-danger">
+                <h4 class="modal-title">Revolutionizing Secure Information Management</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+           Mevodox is a web app that revolutionizes information storage by securely managing memos, notes, 
+           and images. Co-founded by Mr. Yunus, it addresses the issue of personal secrets being compromised
+            in diaries and notebooks. Mevodox arranges memos by date, allows retrieval in PDF format,
+            and ensures utmost privacy. It embodies Benjamin Franklin's famous quote, "Three may keep a secret,
+            if two of them are dead." With Mevodox, users can confidently safeguard their information 
+              and maintain intellectual integrity.
+              <strong>Developer Contact : 0786392008/0738970099</strong>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer text-danger">
+                <div class="float-end">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>  
+            </div>
+            </div>
+
+            </div>
+        </div>
+        </div>
+        <footer>
+               <div class="row text-success">
+               <div class="col-sm">
+                <i class="fas fa-phone green-icon"></i> +255786392008 &nbsp;&nbsp;
+               </div>
+    <div class="col-sm">
+    <i class="fas fa-phone green-icon"></i> +255738970099 &nbsp;&nbsp;
+    </div>
+    <div class="col-sm">
+    <i class="fas fa-envelope green-icon"></i> email: <a href="mailto:snavidux@outlook.com">snavidux@outlook.com</a>
+    </div>
+  </div>
+            </footer>
+            </div>
+            
+   
+
+    {% endblock content %}
+</body>
+
+</html>
