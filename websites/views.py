@@ -19,6 +19,7 @@ views = Blueprint("views", __name__)
 @login_required
 def homepage():
     notice = bool(current_user.notes)
+    print(notice)
     return render_template('homepage.html', user=current_user, notice=notice)
 
 
