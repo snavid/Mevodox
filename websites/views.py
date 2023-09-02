@@ -13,7 +13,14 @@ import os
 
 
 
-e)
+views = Blueprint("views", __name__)
+
+@views.route('/home', methods=['POST', 'GET'])
+@login_required
+def homepage():
+    notice = bool(current_user.notes)
+    print(notice)
+    print(notice)
     return render_template('homepage.html', user=current_user, notice=notice)
 
 
