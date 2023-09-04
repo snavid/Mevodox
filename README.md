@@ -49,12 +49,12 @@ Mevodox is built using a combination of cutting-edge technologies:
    - After registering, log in using your credentials.
 
 3. **Create a Memo**:
-   - Click "Create Memo" to begin adding a new memo.
+   - Click "Add Memo" to begin adding a new memo.
    - Provide a title, content, and an optional image for your memo.
    - Save your memo to store it securely.
 
 4. **Manage Memos**:
-   - Access your stored memos from the dashboard.
+   - Access your stored memos from the Review Memo dashboard by clicking "Review Memo".
    - Utilize the name-based filter to quickly locate specific memos.
    - Click on a memo to view its details.
 
@@ -63,7 +63,7 @@ Mevodox is built using a combination of cutting-edge technologies:
    - Update the memo content and save your changes.
 
 6. **PDF Downloads**:
-   - Easily download any memo as a PDF file for offline access and sharing by selecting the "Download PDF" option while viewing a memo.
+   - Easily download any memo as a PDF file for offline access and sharing by selecting the "Download PDF Icon" option while viewing a memo.
 
 ## Contributing
 
