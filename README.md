@@ -42,7 +42,7 @@ Mevodox is built using a combination of cutting-edge technologies:
 ## Usage
 
 1. **Registration**:
-   - Visit the [Mevodox Web App](https://mevodoxwebapp.pythonanywhere.com) and click "Register."
+   - Visit the [Mevodox Web App](https://mevodoxwebapp.pythonanywhere.com) and click "Signin."
    - Complete the registration process to create your account.
 
 2. **Log In**:
