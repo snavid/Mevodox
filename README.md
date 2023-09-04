@@ -86,8 +86,8 @@ Mevodox Web App is licensed under the [MIT License](LICENSE).
 
 Questions, suggestions, or just want to say hello? Reach out to the project maintainers:
 
-- Email: [your@email.com](mailto:snavidux@outlook.com)
-- GitHub: [YourGitHubUsername](https://github.com/snavid)
+- Email: [mailto:snavidux@outlook.com]
+- GitHub: [https://github.com/snavid]
 - LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/your-linkedin-profile)
 
 Thank you for using Mevodox Web App!
