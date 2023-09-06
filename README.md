@@ -80,7 +80,7 @@ Please ensure that your code adheres to the project's coding standards and conve
 
 ## License
 
-Mevodox Web App is licensed under the [MIT License](LICENSE).
+Mevodox Web App is licensed under the [Apache License](LICENSE).
 
 ## Contact
 
