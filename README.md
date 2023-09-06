@@ -2,7 +2,7 @@
 
 ![Mevodox Web App Logo](https://mevodoxwebapp.pythonanywhere.com/statics/mevodox.png)
 
-**Mevodox** is a powerful web application designed to help you securely store memories and confidential information in the form of memos, complete with images. Whether it's cherished moments or essential notes, Mevodox keeps your memories safe and accessible.
+**Mevodox** is a powerful flask web application designed to help you securely store memories and confidential information in the form of memos, complete with images. Whether it's cherished moments or essential notes, Mevodox keeps your memories safe and accessible.
 
 Visit the live Mevodox Web App: [Mevodox Web App](https://mevodoxwebapp.pythonanywhere.com)
 
