@@ -88,6 +88,5 @@ Questions, suggestions, or just want to say hello? Reach out to the project main
 
 - Email: [mailto:snavidux@outlook.com]
 - GitHub: [https://github.com/snavid]
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/your-linkedin-profile)
 
 Thank you for using Mevodox Web App!
